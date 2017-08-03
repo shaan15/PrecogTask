@@ -8,19 +8,6 @@ Tweepy RESTful API used to stream data from twitter.
 
 FILES AND DIRECTORIES
 
-Directory Structure
-Precog_task
-   |_requirements.txt
-   |_hashtags.txt
-   |_get_tweets_database.py
-   |_makegraphs.py
-   |_templates
-      |_display.html
-   |_static
-      |_originalvsretweets.js
-      |_locationwise.js
-      |_favouritecount.js
-
 - requirements.txt 
  Includes all the libraries used in the application.
 
