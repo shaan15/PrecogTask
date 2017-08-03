@@ -35,10 +35,10 @@ Contains the html files.
 
 SETUP
 
-1. pip freeze requirements.txt - this installs all the required libraries, if not present on your system.
+1. Use requirements.txt - this installs all the required libraries, if not present on your system.
 2. Open a terminal and type mongod to get the server running. In a new terminal, type mongo.
 3. use precog database and create a collection called twitter_db
 4. python database_insert.py - collects relevant tweets from twitter and puts into the database. 
 5. Check count of the tweets in the database. Should be at least 10000.
 6. python makegraphs.py - runs the flask server and displays the content.
-7. Open 127.0.0.1:5000, that is the flask server, to view the graphs.
+7. Open localhost:5000, that is the flask server, to view the graphs.
