@@ -75,11 +75,19 @@ label_list=["Original Tweets","Retweeted Tweets"]
 
 
 @app.route('/')
-def result():
+def originalvsretweets():
 	# plot_tweets_per_category(tweets['Location'], "Location of Tweets", "Location", "Number of Tweets", 200)
 	# plot_distribution(tweets['favorite_count'], "Favourite count distribution", "", "")
 	# plot_piechart(x_list,"Original Tweets vs Retweeted Tweets")
 	return render_template('display.html',x_list=x_list)  
+
+@app.route('/locationwise')
+def location():
+	return render_template('geoplotting.html')
+
+@app.route('/favouritecount')
+def favourite():
+	return render_template('favourite_count.html')
 
 if __name__ == '__main__':
 	app.run(debug=True)    
