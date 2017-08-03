@@ -10,17 +10,19 @@
         'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
       });
       google.charts.setOnLoadCallback(drawRegionsMap);
-
+      var locations = {{ category | tojson }};
       function drawRegionsMap() {
+        // console.log( {{category}} );
+        console.log(locations);
         var data = google.visualization.arrayToDataTable([
           ['Country', 'Popularity'],
           ['India', 173],
-          ['United States', 23],
+          ['United States', 21],
           ['United Kingdom', 14],
-          ['United Arab Emirates', 5],
-          ['Australia', 3],
-          ['Kingdom of Saudi Arabia',5],
-          ['Oman',2]
+          ['United Arab Emirates', 3],
+          ['Australia', 2],
+          ['Kingdom of Saudi Arabia',2],
+          ['Oman',1]
         ]);
 
         var options = {};
