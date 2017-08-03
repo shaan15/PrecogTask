@@ -24,11 +24,11 @@ $( document ).ready(function() {
         colorByPoint: true,
         data: [{
             name: 'Retweeted Tweets',
-            y: 59.3,
+            y: x_list[1],
             drilldown: 'Retweeted Tweets'
         }, {
             name: 'Original Tweets',
-            y: 40.7,
+            y: x_list[0],
             drilldown: 'Original Tweets'
         }]
     }],

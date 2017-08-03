@@ -79,7 +79,7 @@ def result():
 	# plot_tweets_per_category(tweets['Location'], "Location of Tweets", "Location", "Number of Tweets", 200)
 	# plot_distribution(tweets['favorite_count'], "Favourite count distribution", "", "")
 	# plot_piechart(x_list,"Original Tweets vs Retweeted Tweets")
-	return render_template('display.html')  
+	return render_template('display.html',x_list=x_list)  
 
 if __name__ == '__main__':
 	app.run()    
