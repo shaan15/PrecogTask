@@ -44,7 +44,7 @@ list_of_retweets = [element for element in tweets['text'].values if element.star
 num_retweets=str(len(list_of_retweets))
 x_list=[num_originaltweets,num_retweets]
 label_list=["Original Tweets","Retweeted Tweets"]
-	
+print tweets['favorite_count']
 
 # def plot_tweets_per_category(category, title, x_title, y_title, top_n=5):
 # 	tweets_by_cat = category.value_counts()
@@ -73,6 +73,58 @@ label_list=["Original Tweets","Retweeted Tweets"]
 # 	plt.title(title)
 # 	plt.savefig("original_or_retweeted.png")
 
+# count=0
+# di={"10-20":0, "20-30":0,"30-40":0,"40-50":0,"50-60":0, "60-70":0, "70-80":0, "80-90":0, "90-100":0, ">=100":0}
+# for ele in tweets['favorite_count']:
+# 	if ele is None:
+# 		count+=1
+# 	elif ele >=0 and ele<10:
+# 		key=di.get('0-10')
+# 		key+=1
+# 		di['0-10']=key
+# 	elif ele >=10 and ele<20:
+# 		key=di.get('10-20')
+# 		key+=1
+# 		di['10-20']=key
+# 	elif ele >=20 and ele<30:
+# 		key=di.get('20-30')
+# 		key+=1
+# 		di['20-30']=key
+# 	elif ele >=30 and ele<40:
+# 		key=di.get('30-40')
+# 		key+=1
+# 		di['30-40']=key
+# 	elif ele >=40 and ele<50:
+# 		key=di.get('40-50')
+# 		key+=1
+# 		di['40-50']=key
+# 	elif ele >=50 and ele<60:
+# 		key=di.get('50-60')
+# 		key+=1
+# 		di['50-60']=key
+# 	elif ele >=60 and ele<70:
+# 		key=di.get('60-70')
+# 		key+=1
+# 		di['60-70']=key
+# 	elif ele >=70 and ele<80:
+# 		key=di.get('70-80')
+# 		key+=1
+# 		di['70-80']=key
+# 	elif ele >=80 and ele<90:
+# 		key=di.get('80-90')
+# 		key+=1
+# 		di['80-90']=key
+# 	elif ele >=90 and ele<100:
+# 		key=di.get('90-100')
+# 		key+=1
+# 		di['90-100']=key
+# 	else:
+# 		key=di.get('>=100')
+# 		key+=1
+# 		di['>=100']=key
+
+
+# print di
 
 @app.route('/')
 def originalvsretweets():
@@ -83,11 +135,13 @@ def originalvsretweets():
 
 @app.route('/locationwise')
 def location():
-	return render_template('geoplotting.html')
+	return render_template('geoplotting.html',category=tweets['Location'])
+
 
 @app.route('/favouritecount')
 def favourite():
-	return render_template('favourite_count.html')
+	#plot_distribution(tweets['favorite_count'], "Favourite count distribution", "Number of likes", "Number of tweets")
+	return render_template('favourite_count.html',fav=tweets['favorite_count'])
 
 if __name__ == '__main__':
 	app.run(debug=True)    

@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+    console.log("kabfa");
     new Highcharts.chart('container', {
     chart: {
         type: 'pie'
@@ -46,5 +47,5 @@ $( document ).ready(function() {
 });
     
    
-   
+  console.log("kabfa"); 
 });

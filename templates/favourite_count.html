@@ -22,10 +22,13 @@ Highcharts.chart('container', {
     },
     
     xAxis: {
+        
         type: 'category'
     },
     yAxis: {
-        
+        title: {
+            text: 'Number of tweets'
+        }
 
     },
     legend: {
@@ -47,32 +50,32 @@ Highcharts.chart('container', {
     },
 
     series: [{
-        name: 'Brands',
+        name: 'Tweets',
         colorByPoint: true,
         data: [{
-            name: 'Microsoft Internet Explorer',
-            y: 56.33,
-            drilldown: 'Microsoft Internet Explorer'
+            name: '0-10',
+            y: 56.8,
+            
         }, {
-            name: 'Chrome',
-            y: 24.03,
-            drilldown: 'Chrome'
+            name: '10-20',
+            y: 26.3,
+            
         }, {
-            name: 'Firefox',
-            y: 10.38,
-            drilldown: 'Firefox'
+            name: '20-30',
+            y: 8.38,
+            
         }, {
-            name: 'Safari',
+            name: '30-40',
             y: 4.77,
-            drilldown: 'Safari'
+            
         }, {
-            name: 'Opera',
-            y: 0.91,
-            drilldown: 'Opera'
+            name: '40-50',
+            y: 2.92,
+            
         }, {
-            name: 'Proprietary or Undetectable',
-            y: 0.2,
-            drilldown: null
+            name: '>=50',
+            y: 0.82,
+            
         }]
     }]
 });
